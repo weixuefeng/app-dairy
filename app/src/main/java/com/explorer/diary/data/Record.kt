@@ -12,7 +12,7 @@ import com.explorer.diary.config.Constant
  * @copyright (c) 2020 Newton Foundation. All rights reserved.
  */
 @Entity(tableName = Constant.DATABASE_TABLE_RECORD)
-data class Record(val content: String, val timeStamp: Long) {
+data class Record(var content: String, val timeStamp: Long) {
     @PrimaryKey(autoGenerate = true)
     var id: Long = 0
 }

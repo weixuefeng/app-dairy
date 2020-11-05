@@ -1,8 +1,6 @@
 package com.explorer.diary.data
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 /**
  * @author weixuefeng@lubangame.com
@@ -13,10 +11,11 @@ import androidx.room.Query
  */
 @Dao
 interface RecordDao {
+
     @Query("select * from records order by id desc")
     fun getAllRecords(): List<Record>
 
-    @Insert
+    @Insert(entity = Record::class, onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(vararg records: Record)
 
     @Query("select * from records where id = :id")
@@ -24,4 +23,5 @@ interface RecordDao {
 
     @Query("delete from records")
     fun removeAllRecords()
+
 }
