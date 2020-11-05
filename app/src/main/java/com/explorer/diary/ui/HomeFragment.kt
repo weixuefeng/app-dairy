@@ -1,5 +1,6 @@
 package com.explorer.diary.ui
 
+import android.content.Context
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -29,7 +30,6 @@ class HomeFragment: BaseFragment() {
     @Inject lateinit var navigator: AppNavigator
 
     private val viewModel by activityViewModels<HomeViewModel>()
-
 
     override fun getLayout(): Int = R.layout.fragment_home
 
