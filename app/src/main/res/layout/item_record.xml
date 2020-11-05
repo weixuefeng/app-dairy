@@ -2,6 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:padding="@dimen/normal_padding"
+    android:background="@color/home_item_bg"
+    android:layout_marginBottom="@dimen/big_margin"
     android:layout_height="@dimen/item_record_height"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <com.google.android.material.textview.MaterialTextView
@@ -9,11 +11,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textColor="@color/home_text"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        />
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/contentTextView"
+        android:layout_marginTop="@dimen/small"
         app:layout_constraintTop_toBottomOf="@id/titleTextView"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:maxEms="4"
+        android:textColor="@color/home_text"
+        android:ellipsize="end"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,5 +3,6 @@
     <dimen name="big_padding">16dp</dimen>
     <dimen name="big_margin">16dp</dimen>
     <dimen name="normal_padding">8dp</dimen>
-    <dimen name="item_record_height">64dp</dimen>
+    <dimen name="small">4dp</dimen>
+    <dimen name="item_record_height">84dp</dimen>
 </resources>

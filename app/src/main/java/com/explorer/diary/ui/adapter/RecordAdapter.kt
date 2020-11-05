@@ -4,6 +4,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.explorer.diary.R
 import com.explorer.diary.data.Record
+import com.explorer.diary.util.DateUtils
 
 /**
  * @author weixuefeng@lubangame.com
@@ -16,7 +17,7 @@ class RecordAdapter: BaseQuickAdapter<Record, BaseViewHolder>(
     layoutResId = R.layout.item_record
 ) {
     override fun convert(holder: BaseViewHolder, item: Record) {
-        holder.setText(R.id.titleTextView, item.timeStamp.toString())
+        holder.setText(R.id.titleTextView, DateUtils.formatDate(item.timeStamp))
             .setText(R.id.contentTextView, item.content)
     }
 }
