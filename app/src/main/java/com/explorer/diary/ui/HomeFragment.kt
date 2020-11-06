@@ -34,8 +34,6 @@ class HomeFragment: BaseFragment() {
     override fun getLayout(): Int = R.layout.fragment_home
 
     override fun initViews() {
-        viewModel.getAllRecords()
-
         val adapter = RecordAdapter()
         val recordsList = arrayListOf<Record>()
         recyclerView.layoutManager = LinearLayoutManager(mContext)
@@ -50,9 +48,15 @@ class HomeFragment: BaseFragment() {
         }
 
         viewModel.onAllRecords().observe(requireActivity(), Observer {
+            recordsList.clear()
             recordsList.addAll(it.toMutableList())
             adapter.setNewInstance(it.toMutableList())
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.getAllRecords()
     }
 
 
