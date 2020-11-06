@@ -5,4 +5,5 @@
     <dimen name="normal_padding">8dp</dimen>
     <dimen name="small">4dp</dimen>
     <dimen name="item_record_height">84dp</dimen>
+    <dimen name="home_bottom_height">48dp</dimen>
 </resources>
