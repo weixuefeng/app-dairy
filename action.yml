@@ -1,2 +1,4 @@
 name: Publish dairy
 description: This is a app for dairy, which used android jetpack's room, viewmodel, livedata... this file is a test action file.
+icon: activity
+color: red
