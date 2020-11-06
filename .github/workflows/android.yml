@@ -41,7 +41,7 @@ jobs:
       # publish
       - name: publish release
         run: |
-          hub checkout master
+          hub checkout main
           VERSION_NAME=`grep -oP 'versionName "\K(.*?)(?=")' ./app/build.gradle`
           hub release create -a ./app/build/outputs/apk/release/*-release.apk -m "${RELEASE_TITLE} - v${VERSION_NAME}" $(date +%Y%m%d%H%M%S) 
 
