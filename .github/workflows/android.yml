@@ -40,6 +40,8 @@ jobs:
         run: ./gradlew build
       # publish
       - name: publish release
+        env:
+          GITHUB_TOKEN: ae0ae40df452ebcb42b336da115c5dce8ed20076
         run: |
           hub checkout main
           VERSION_NAME=`grep -oP 'versionName "\K(.*?)(?=")' ./app/build.gradle`
