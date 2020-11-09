@@ -36,11 +36,9 @@ class EditDairyFragment : BaseFragment(), CustomAdapt {
 
     override fun initViews() {
         mCurrentRecord = viewModel.getCurrentRecord()
-
         editText.setText(mCurrentRecord?.content)
-
         // save dairy logic
-        saveButton.setOnClickListener {
+        quitButton.setOnClickListener {
             requireActivity().onBackPressed()
         }
 
@@ -68,7 +66,7 @@ class EditDairyFragment : BaseFragment(), CustomAdapt {
             }
             viewModel.addRecord(record)
             KeyboardUtils.hideKeyboard(editText)
-            showConfirmPopupWindow()
+            requireActivity().onBackPressed()
         }
     }
 

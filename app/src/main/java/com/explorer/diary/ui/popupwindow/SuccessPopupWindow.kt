@@ -17,7 +17,6 @@ import com.explorer.diary.R
  * @copyright (c) 2020 Newton Foundation. All rights reserved.
  */
 class SuccessPopupWindow(context: Context, finishCallback:(SuccessPopupWindow) -> Unit): PopupWindow(context) {
-    private val TAG = "SuccessPopupWindow"
 
     init {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater

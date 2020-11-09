@@ -1,7 +1,5 @@
 package com.explorer.diary.viewmodel
 
-import android.os.Bundle
-import android.util.Log
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
@@ -9,7 +7,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import com.explorer.diary.data.Record
 import com.explorer.diary.data.RecordDataSource
-import java.util.logging.Logger
 
 /**
  * @author weixuefeng@lubangame.com

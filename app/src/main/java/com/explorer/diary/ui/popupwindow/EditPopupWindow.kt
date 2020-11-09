@@ -17,7 +17,6 @@ import com.explorer.diary.R
  * @copyright (c) 2020 Newton Foundation. All rights reserved.
  */
 class EditPopupWindow(context: Context): PopupWindow(context) {
-    private val TAG = "EditPopupWindow"
 
     init {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -32,7 +31,6 @@ class EditPopupWindow(context: Context): PopupWindow(context) {
         animationStyle = R.style.pop_anim_style
 
         contentView.findViewById<Button>(R.id.button).setOnClickListener {
-            Log.d(TAG, "CLICK")
         }
     }
 }
