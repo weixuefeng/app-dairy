@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@+id/successImageLogo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="84dp"
+        android:src="@drawable/brvah_sample_footer_loading_progress"
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
+    <TextView
+        android:id="@+id/title"
+        app:layout_constraintTop_toBottomOf="@id/successImageLogo"
+        android:layout_width="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/normal_padding"
+        android:textColor="#131313"
+        android:textSize="24sp"
+        android:lineHeight="32dp"
+        android:text="Wallet Retrieved \n
+from Newton Cloud Backup"
+        />
+    <TextView
+        android:id="@+id/subTitle"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:textColor="#FF777777"
+        android:text="Your Wallet Address"
+        android:layout_marginTop="@dimen/big_margin"
+        />
+    <TextView
+        android:id="@+id/content"
+        app:layout_constraintTop_toBottomOf="@id/subTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#FF131313"
+        android:text="NEW1821234567891234567823"
+        />
+    <TextView
+        android:id="@+id/tip"
+        app:layout_constraintTop_toBottomOf="@id/content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:textColor="#FF131313"
+        android:textSize="15sp"
+        android:layout_marginTop="@dimen/big_margin"
+        android:layout_height="wrap_content"
+        android:text="You can use your wallet with your\n
+wallet password"
+        />
+    <Button
+        android:id="@+id/finishButton"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

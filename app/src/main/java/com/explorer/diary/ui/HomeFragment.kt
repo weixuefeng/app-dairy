@@ -58,6 +58,4 @@ class HomeFragment: BaseFragment() {
         super.onResume()
         viewModel.getAllRecords()
     }
-
-
 }

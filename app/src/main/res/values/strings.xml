@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">app-diary</string>
-    <string name="save">save</string>
-    <string name="edit">Edit</string>
+    <string name="save">保存</string>
+    <string name="edit">编辑</string>
+    <string name="home_complete">完</string>
+    <string name="quit">退出</string>
 </resources>

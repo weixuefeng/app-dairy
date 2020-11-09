@@ -70,4 +70,7 @@ dependencies {
 
     // adapter
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
+    // screen adapter
+    implementation 'me.jessyan:autosize:1.0.0'
 }

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">app-diary</string>
+    <string name="save">save</string>
+    <string name="edit">Edit</string>
+    <string name="home_complete">Done</string>
+    <string name="quit">Quit</string>
+</resources>

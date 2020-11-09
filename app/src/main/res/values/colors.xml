@@ -9,7 +9,12 @@
     <color name="white">#FFFFFFFF</color>
 
 
-    <color name="home_text">#FF838A9A</color>
-    <color name="home_item_bg">#FF242937</color>
-    <color name="home_bg">#FF1C1E29</color>
+<!--    <color name="home_text">#FF838A9A</color>-->
+<!--    <color name="home_item_bg">#FF242937</color>-->
+<!--    <color name="home_bg">#FF1C1E29</color>-->
+
+    <color name="home_text">#131313</color>
+    <color name="home_item_bg">#FFF6F8FA</color>
+    <color name="home_bg">#FFFFFF</color>
+
 </resources>

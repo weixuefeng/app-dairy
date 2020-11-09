@@ -1,13 +1,18 @@
 package com.explorer.diary.ui
 
-import android.util.Log
+import android.view.Gravity
+import android.view.View
 import androidx.fragment.app.activityViewModels
 import com.explorer.diary.R
 import com.explorer.diary.data.Record
 import com.explorer.diary.navigator.AppNavigator
+import com.explorer.diary.ui.popupwindow.SuccessPopupWindow
+import com.explorer.diary.util.KeyboardUtils
+import com.explorer.diary.util.SoftKeyBoardListener
 import com.explorer.diary.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_edit_dairy.*
+import me.jessyan.autosize.internal.CustomAdapt
 import javax.inject.Inject
 
 /**
@@ -18,7 +23,7 @@ import javax.inject.Inject
  * @copyright (c) 2020 Newton Foundation. All rights reserved.
  */
 @AndroidEntryPoint
-class EditDairyFragment : BaseFragment() {
+class EditDairyFragment : BaseFragment(), CustomAdapt {
 
     @Inject lateinit var navigator: AppNavigator
 
@@ -34,7 +39,26 @@ class EditDairyFragment : BaseFragment() {
 
         editText.setText(mCurrentRecord?.content)
 
+        // save dairy logic
         saveButton.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+
+        // add keyboard listener
+        val softKeyBoardListener = SoftKeyBoardListener(rootView)
+        softKeyBoardListener.setOnSoftKeyBoardChangeListener(onSoftKeyBoardChangeListener = object: SoftKeyBoardListener.OnSoftKeyBoardChangeListener {
+            override fun keyBoardShow(height: Int) {
+                showToolView()
+            }
+
+            override fun keyBoardHide(height: Int) {
+                hideToolView()
+            }
+        })
+        softKeyBoardListener.addGlobalLayoutListener()
+
+        // complete button
+        completeBt.setOnClickListener {
             val content = editText.text.toString()
             val record: Record = if (mCurrentRecord == null) {
                 Record(content, System.currentTimeMillis())
@@ -43,10 +67,27 @@ class EditDairyFragment : BaseFragment() {
                 mCurrentRecord!!
             }
             viewModel.addRecord(record)
-            requireActivity().onBackPressed()
+            KeyboardUtils.hideKeyboard(editText)
+            showConfirmPopupWindow()
         }
     }
 
+
+    private fun showToolView() {
+        toolLayout.visibility = View.VISIBLE
+    }
+
+    private fun hideToolView() {
+        toolLayout.visibility = View.GONE
+    }
+
+    private fun showConfirmPopupWindow() {
+        val popupWindow = SuccessPopupWindow(mContext) {
+            it.dismiss()
+            requireActivity().onBackPressed()
+        }
+        popupWindow.showAtLocation(rootView, Gravity.BOTTOM or Gravity.CENTER, 0, 0)
+    }
 
 
     override fun onResume() {
@@ -69,10 +110,12 @@ class EditDairyFragment : BaseFragment() {
         }
     }
 
-    val TAG = "EditDairyFragment"
     override fun onDestroyView() {
         super.onDestroyView()
-        Log.d(TAG, "Destory")
         viewModel.clear()
     }
+
+    override fun isBaseOnWidth(): Boolean = false
+
+    override fun getSizeInDp(): Float = 720F
 }

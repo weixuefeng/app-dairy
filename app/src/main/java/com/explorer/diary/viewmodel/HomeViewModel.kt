@@ -72,10 +72,10 @@ open class HomeViewModel @ViewModelInject constructor(
         return savedStateHandle.getLiveData<Record>(recordKey).value
     }
 
-    val TAG = "HomeViewModel"
     override fun onCleared() {
         savedStateHandle.remove<String>(key)
         savedStateHandle.remove<String>(recordKey)
+        onCurrentRecord.postValue(null)
     }
 
     fun clear() {
