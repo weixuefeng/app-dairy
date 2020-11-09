@@ -66,7 +66,7 @@ class EditDairyFragment : BaseFragment(), CustomAdapt {
             }
             viewModel.addRecord(record)
             KeyboardUtils.hideKeyboard(editText)
-            requireActivity().onBackPressed()
+            showConfirmPopupWindow()
         }
     }
 
